@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  user: tsu-nera
+  sudo: yes
+  name: "Emacs Setup"
+  tasks:
+    - pacman: name=git,cvs,bzr,mercurial,openssh,emacs
+
+      
