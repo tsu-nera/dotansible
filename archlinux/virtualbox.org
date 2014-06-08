@@ -1,0 +1,25 @@
+* VirtualBox
+
+- [[https://wiki.archlinux.org/index.php/VirtualBox_(%E6%97%A5%E6%9C%AC%E8%AA%9E)][VirtualBox (日本語) - ArchWiki]]
+
+以下のモジュールが必要。
+
+- virtualbox
+- virtualbox-host-modules
+- qt4
+
+#+begin_src yaml :tangle yes
+---
+- hosts: localhost
+  sudo: yes
+  tasks:
+    - name: Install VirtualBox
+      pacman: name=virtualbox,virtualbox-host-modules,qt4
+#+end_src
+
+ArchLinuxでゲストOSを動かすためにはKernelモジュールをロードする必要がある。
+
+#+begin_src yaml :tangle yes
+    - name: Load Kernel Module
+      command: modprobe vboxdrv
+#+end_src

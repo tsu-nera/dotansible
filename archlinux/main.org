@@ -1,3 +1,6 @@
+* ArchLinux Tools
+
+#+begin_src yaml :tangle yes
 ---
 - hosts: localhost
   sudo: yes
@@ -13,7 +16,12 @@
 
     - name: window manager
       pacman: name=xmonad,xmonad-contrib,dmenu,xmobar,xorg-xev
+#+end_src
 
+** NTP設定
+NTPの設定をおこなう。
+
+#+begin_src yaml :tangle yes
     - name: Install NTP
       pacman: name=ntp
 
@@ -22,3 +30,4 @@
 
     - name: Install multimedia
       pacman: name=flashplugin,alsa-utils
+#+end_src
