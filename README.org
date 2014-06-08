@@ -1,4 +1,13 @@
 * Ansible
 My ansible playbooks.
 
-xs
+* Setup
+
+#+begin_src language
+# put .zshenv
+export ANSIBLE_HOSTS=$HOME/ansible/hosts
+
+# make .ansible.cfg
+ln -s ~/ansible/.ansible.cfg .
+#+end_src
+
