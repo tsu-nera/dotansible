@@ -1,0 +1,19 @@
+---
+- hosts: localhost
+  sudo: yes
+  tasks:
+    - name: install IM
+      pacman: name=ibus-anthy
+
+    - name: install utilities
+      pacman: name=curl,wget,base-devel,openssh
+
+    - name: install login manager
+      pacman: name=slim,archlinux-themes-slim,slim-themes
+
+    - name: sound
+      pacman: name=alsa-utils
+
+    - name: window manager
+      pacman: name=xmonad,xmonad-contrib,dmenu,xmobar,xorg-xev
+
