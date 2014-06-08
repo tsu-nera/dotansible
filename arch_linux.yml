@@ -17,3 +17,5 @@
     - name: window manager
       pacman: name=xmonad,xmonad-contrib,dmenu,xmobar,xorg-xev
 
+    - name: time
+      pacman: name=ntp
