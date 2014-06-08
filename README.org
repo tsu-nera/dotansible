@@ -2,7 +2,6 @@
 My ansible playbooks.
 
 * Setup
-
 #+begin_src language
 # put .zshenv
 export ANSIBLE_HOSTS=$HOME/.ansible/hosts
