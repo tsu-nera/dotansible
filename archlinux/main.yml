@@ -11,9 +11,6 @@
     - name: install login manager
       pacman: name=slim,archlinux-themes-slim,slim-themes
 
-    - name: sound
-      pacman: name=alsa-utils
-
     - name: window manager
       pacman: name=xmonad,xmonad-contrib,dmenu,xmobar,xorg-xev
 
@@ -22,12 +19,6 @@
 
     - name: Copy over the NTP configuration
       copy: src=files/ntp.conf dest=/etc/ntp.conf owner=root group=root mode=0644
-      notify:
-      - restart ntp
 
     - name: Install multimedia
-      pacman: name=flashplugin
-
-  handlers:
-    - name: restart ntp
-      service: name=ntp state=restarted
+      pacman: name=flashplugin,alsa-utils

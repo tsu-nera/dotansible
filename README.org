@@ -1,13 +1,12 @@
-* Ansible
+* dotansible
 My ansible playbooks.
 
 * Setup
 
 #+begin_src language
 # put .zshenv
-export ANSIBLE_HOSTS=$HOME/ansible/hosts
+export ANSIBLE_HOSTS=$HOME/.ansible/hosts
 
 # make .ansible.cfg
-ln -s ~/ansible/.ansible.cfg .
+ln -s ~/.ansible/.ansible.cfg .
 #+end_src
-
