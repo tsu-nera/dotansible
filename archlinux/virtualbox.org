@@ -31,9 +31,11 @@ ArchLinuxでゲストOSを動かすためにはKernelモジュールをロード
 ホストオンリーアダプターを利用するためには、これも必要。
 
 #+begin_src yaml :tangle yes
-    - name: Enable Brigde Networking
+    - name: Enable vboxnet adapter
       command: modprobe vboxnetadp 
+    - name: Enable vboxnetflt
       command: modprobe vboxnetflt
+    - name: Enable vboxpci
       command: modprobe vboxpci
 #+end_src
 
@@ -46,3 +48,23 @@ Could not start the machine ... because the following physical network interface
 vboxnet0 (adapter 1)
 You can either change the machine's network settings or stop the machine."
 #+end_src
+
+** DHCPCDの起動
+
+ホストオンリーアダプタでDHCPサーバを有効にしても、
+pingがゲストOSに届かなかった。
+
+dhcp クライアントが起動していないことが原因。
+
+- [[http://www.reddit.com/r/archlinux/comments/mdal4/network_problems_with_trying_out_arch_on/][Network problems with trying out Arch on VirtualBox : archlinux]]
+
+手動で起動する。sudo dhcpcd
+
+#+begin_src yaml :tangle yes
+    - name: Enable DHCP Client
+      command: dhcpcd
+#+end_src
+
+参考:
+
+- [[https://wiki.archlinux.org/index.php/Dhcpcd_(%E6%97%A5%E6%9C%AC%E8%AA%9E)][dhcpcd (日本語) - ArchWiki]]
