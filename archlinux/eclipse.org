@@ -1,0 +1,40 @@
+* Eclipse
+統合開発環境.
+
+- https://wiki.archlinux.org/index.php/eclipse
+
+* pacmanで取得
+以下、封印。
+
+#+begin_src yaml :tangle yes
+---
+- hosts: localhost
+  sudo: yes
+  tasks:
+    - name: Install Eclipse
+      pacman: name=eclipse
+#+end_src
+
+* 日本語化
+日本語環境は、Pleadesから持ってきたものがいいかな。
+
+- [[http://mergedoc.sourceforge.jp/][Pleiades - Eclipse プラグイン日本語化プラグイン | MergeDoc Project]]
+
+以下を参考。
+
+- [[http://futurismo.biz/archives/2082][Linux Mintインストール後の設定メモ | Futurismo]]
+- [[http://blog.livedoor.jp/tickstick/archives/1030400.html][Tick Stick Linux : Eclipse を Pleades で日本語化 Ubuntu12.04(LinuxMint13)&ArchLinux対応]]
+- [[http://www.kkaneko.com/rinkou/javaintro/linux_eclipse.html][Linux で Eclipse 4.2 のダウンロード，インストール，設定，日本語化，基本操作]]
+
+pacmanだと、/usr/share/eclipse/にインストールされる。
+
+1. pleiades_x.x.x.zip を解凍し、
+  plugins、features ディレクトリーを <ECLIPSE_HOME> ディレクトリーにコピー。
+
+2. eclipse.ini の最終行に以下の記述を追加。
+#+begin_src language
+     -javaagent:plugins/jp.sourceforge.mergedoc.pleiades/pleiades.jar
+#+end_src
+
+3. Pleiades スプラッシュ画像を使う場合は
+   eclipse.ini の 1、2 行目の -showsplash org.eclipse.platform を削除。

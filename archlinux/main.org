@@ -5,11 +5,11 @@
 - hosts: localhost
   sudo: yes
   tasks:
+    - name: install utilities
+      pacman: name=unzip,curl,wget,openssh
+
     - name: install IM
       pacman: name=ibus-anthy
-
-    - name: install utilities
-      pacman: name=curl,wget,openssh
 
     - name: install login manager
       pacman: name=slim,archlinux-themes-slim,slim-themes

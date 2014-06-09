@@ -47,9 +47,9 @@ ArchLinuxでゲストOSを動かすためにはKernelモジュールをロード
 Could not start the machine ... because the following physical network interfaces were not found:
 vboxnet0 (adapter 1)
 You can either change the machine's network settings or stop the machine."
-#+end_src
+#+end_quote
 
-** DHCPCDの起動
+** DHCP Clientの起動
 
 ホストオンリーアダプタでDHCPサーバを有効にしても、
 pingがゲストOSに届かなかった。

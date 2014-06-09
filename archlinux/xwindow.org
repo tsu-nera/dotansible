@@ -1,0 +1,47 @@
+* X Window System 関連
+
+基本のインストール。
+
+#+begin_src yaml :tangle yes
+---
+- hosts: localhost
+  sudo: yes
+  tasks:
+    - pacman: name=xorg-server,xorg-server-utils,xorg-xinit,xterm,xorg-twm,xorg-xclock
+#+end_src
+
+* Window Manager
+** xmonad
+   タイル型ウィンドウマネージャ
+
+#+begin_src yaml :tangle yes
+    - name: Install xmonad
+      pacman: name=xmonad,xmonad-contrib,dmenu,xmobar,xorg-xev
+#+end_src
+
+** slim
+   ログインマネージャー
+
+#+begin_src yaml :tangle yes
+    - name: install login manager
+      pacman: name=slim,archlinux-themes-slim,slim-themes
+#+end_src
+
+* スクリーンロック
+** slimlock
+   slimと連携する lock機能。
+
+- [[http://joelburget.com/slimlock/]["Slimlock: Unholy Screen Locker"]]
+- https://github.com/dannyn/slimlock
+
+  slimをインストールすると、入っている。slimlockでロックできる。Nice!
+
+** XScreenSaver
+   スクリーンセーバー。
+
+   - [[https://wiki.archlinux.org/index.php/XScreenSaver#Lock_Screen][XScreenSaver - ArchWiki]]
+
+#+begin_src yaml :tangle no
+    - name: Install Screen Saver
+      pacman: name=xscreensaver
+#+end_src

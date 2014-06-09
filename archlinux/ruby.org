@@ -1,0 +1,13 @@
+* Ruby
+みんなだいすきRubyだよ。
+
+- [[https://wiki.archlinux.org/index.php/Ruby_(%E6%97%A5%E6%9C%AC%E8%AA%9E)][Ruby (日本語) - ArchWiki]]
+
+#+begin_src yaml :tangle yes
+---
+- hosts: localhost
+  sudo: yes
+  tasks:
+    - name: Install Ruby
+      pacman: name=ruby
+#+end_src

@@ -1,3 +1,6 @@
+* Emacs
+
+#+begin_src yaml :tangle yes
 ---
 - hosts: localhost
   user: tsu-nera
@@ -5,5 +8,4 @@
   name: "Emacs Setup"
   tasks:
     - pacman: name=git,cvs,bzr,mercurial,openssh,emacs
-
-      
+#+end_src
