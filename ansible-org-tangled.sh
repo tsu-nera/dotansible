@@ -20,10 +20,14 @@ for i in $@; do
             (org-babel-tangle)
             (kill-buffer)) '($FILE)))" 2>&1 |grep tangled
 
-
     # execute ansible command to yml file
     string_filename=${i##*/}
     string_filename_without_extension=${string_filename%.*}
     string_path=${i%/*}
-    ansible-playbook ${string_path}/${string_filename_without_extension}.yaml
+
+    if test $string_filename = $i ; then
+	ansible-playbook ${string_filename_without_extension}.yaml
+    else
+	ansible-playbook ${string_path}/${string_filename_without_extension}.yaml
+    fi
 done

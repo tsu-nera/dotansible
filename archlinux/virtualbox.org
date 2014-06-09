@@ -2,6 +2,8 @@
 
 - [[https://wiki.archlinux.org/index.php/VirtualBox_(%E6%97%A5%E6%9C%AC%E8%AA%9E)][VirtualBox (日本語) - ArchWiki]]
 
+** インストール
+
 以下のモジュールが必要。
 
 - virtualbox
@@ -17,9 +19,30 @@
       pacman: name=virtualbox,virtualbox-host-modules,qt4
 #+end_src
 
+** Kernel Moduleのロード
+
 ArchLinuxでゲストOSを動かすためにはKernelモジュールをロードする必要がある。
 
 #+begin_src yaml :tangle yes
     - name: Load Kernel Module
       command: modprobe vboxdrv
+#+end_src
+
+ホストオンリーアダプターを利用するためには、これも必要。
+
+#+begin_src yaml :tangle yes
+    - name: Enable Brigde Networking
+      command: modprobe vboxnetadp 
+      command: modprobe vboxnetflt
+      command: modprobe vboxpci
+#+end_src
+
+以下のエラーがでたので対処。
+
+- [[http://islandora.ca/content/fixing-missing-vboxnet0][Fixing a Missing "vboxnet0" | Islandora Website]]
+
+#+begin_quote
+Could not start the machine ... because the following physical network interfaces were not found:
+vboxnet0 (adapter 1)
+You can either change the machine's network settings or stop the machine."
 #+end_src
