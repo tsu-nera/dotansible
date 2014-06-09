@@ -1,0 +1,21 @@
+* scala
+Scalable Language.
+
+** Install Scala
+#+begin_src yaml :tangle yes
+---
+- hosts: localhost
+  sudo: yes
+  tasks:
+    - name: Install Scala
+      pacman: name=scala
+xs#+end_src
+
+** Install sbt
+scala のビルドツール。
+
+#+begin_src yaml :tangle yes
+    - name: Install sbt
+      pacman: name=sbt
+#+end_src
+

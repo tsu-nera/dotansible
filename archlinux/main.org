@@ -10,12 +10,6 @@
 
     - name: install IM
       pacman: name=ibus-anthy
-
-    - name: install login manager
-      pacman: name=slim,archlinux-themes-slim,slim-themes
-
-    - name: window manager
-      pacman: name=xmonad,xmonad-contrib,dmenu,xmobar,xorg-xev
 #+end_src
 
 ** NTP設定
