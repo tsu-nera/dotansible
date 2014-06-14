@@ -1,0 +1,23 @@
+* ArchLinux Utilities
+
+#+begin_src yaml :tangle yes
+---
+- hosts: localhost
+  sudo: yes
+  tasks:
+    - name: install utilities
+      pacman: name=unzip,curl,wget,openssh
+
+    - name: install IM
+      pacman: name=ibus-anthy
+#+end_src
+
+** ag 
+The Silver Searcher. 高速grep
+
+- https://github.com/ggreer/the_silver_searcher
+
+#+begin_src yaml :tangle yes
+    - name: install ag
+      pacman: name=the_silver_searcher
+#+end_src

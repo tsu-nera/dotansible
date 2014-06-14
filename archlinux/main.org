@@ -1,17 +1,4 @@
-* ArchLinux Tools
-
-#+begin_src yaml :tangle yes
----
-- hosts: localhost
-  sudo: yes
-  tasks:
-    - name: install utilities
-      pacman: name=unzip,curl,wget,openssh
-
-    - name: install IM
-      pacman: name=ibus-anthy
-#+end_src
-
+* ArchLinux Basic Settings
 ** NTP設定
 NTPの設定をおこなう。
 
