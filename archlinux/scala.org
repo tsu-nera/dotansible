@@ -9,7 +9,7 @@ Scalable Language.
   tasks:
     - name: Install Scala
       pacman: name=scala
-xs#+end_src
+#+end_src
 
 ** Install sbt
 scala のビルドツール。

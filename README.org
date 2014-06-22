@@ -9,3 +9,7 @@ export ANSIBLE_HOSTS=$HOME/.ansible/hosts
 # make .ansible.cfg
 ln -s ~/.ansible/.ansible.cfg .
 #+end_src
+
+* Bookmarks
+- [[https://bitbucket.org/estin/arch-desktop][estin / arch-desktop — Bitbucket]]
+- 

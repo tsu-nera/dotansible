@@ -1,0 +1,35 @@
+* Android
+
+- https://wiki.archlinux.org/index.php/android
+
+AURではなくて、Eclipseの機能からインストールした。
+
+#+begin_src yaml :tangle yes
+---
+- hosts: localhost
+  sudo: yes
+  tasks:
+    - name: Install android-sdk
+      action: command yaourt --noconfirm --force -S android-sdk
+    - name: Install android-sdk-platform-tools
+      action: command yaourt --noconfirm --force -S android-sdk-platform-tools
+    - name: Install android-sdk
+      action: command yaourt --noconfirm --force -S android-sdk-build-tools
+#+end_src
+
+** Geny Motion
+超高速 Android Emurator
+
+#+begin_src yaml :tangle yes
+    - name: Install GenyMotion
+      action: command yaourt --noconfirm --force -S genymotion
+#+end_src
+
+以下を、/etc/modules-load.d/virtualbox.confに書いた。
+
+#+begin_src language
+	vboxdrv
+	vboxnetflt
+	vboxnetadp
+	vboxpci
+#+end_src

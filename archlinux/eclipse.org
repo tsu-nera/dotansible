@@ -38,3 +38,11 @@ pacmanだと、/usr/share/eclipse/にインストールされる。
 
 3. Pleiades スプラッシュ画像を使う場合は
    eclipse.ini の 1、2 行目の -showsplash org.eclipse.platform を削除。
+
+* eclim
+eclipseをemacsから利用するというcrazy tool.
+
+#+begin_src yaml :tangle yes
+    - name: Install eclim
+      action: command yaourt --noconfirm --force -S eclim
+#+end_src

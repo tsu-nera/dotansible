@@ -21,3 +21,13 @@ The Silver Searcher. 高速grep
     - name: install ag
       pacman: name=the_silver_searcher
 #+end_src
+
+
+* FTP関連
+** FileZilla
+GUIのFTPクライアント.
+
+#+begin_src yaml :tangle yes
+    - name: install FileZilla
+      pacman: name=filezilla
+#+end_src

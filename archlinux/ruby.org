@@ -11,3 +11,13 @@
     - name: Install Ruby
       pacman: name=ruby
 #+end_src
+
+* Gem
+** taskjuggler
+
+   ガントチャートを作成するツール。
+
+#+begin_src yaml :tangle yes
+    - name: Install TaskJuggler
+      gem: name=taskjuggler
+#+end_src

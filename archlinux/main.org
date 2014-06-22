@@ -1,4 +1,40 @@
 * ArchLinux Basic Settings
+** 電源管理
+端末から ACPI ユーティリティを使うことでバッテリーの状態を読み込めます.
+
+- [[https://wiki.archlinux.org/index.php/Power_Management_(%E6%97%A5%E6%9C%AC%E8%AA%9E)][Power Management (日本語) - ArchWiki]]
+- [[https://wiki.archlinux.org/index.php/Laptop_(%E6%97%A5%E6%9C%AC%E8%AA%9E)#.E9.9B.BB.E6.BA.90.E7.AE.A1.E7.90.86][Laptop (日本語) - ArchWiki]]
+
+#+begin_src yaml :tangle yes
+---
+- hosts: localhost
+  sudo: yes
+  tasks:
+    - name: Install ACPI
+      pacman: name=acpi
+#+end_src
+
+以下のコマンドで情報がとれる。
+
+#+begin_src language
+acpi -i
+#+end_src
+
+** 通知関連
+
+- [[https://wiki.archlinux.org/index.php/Desktop_notifications][Desktop notifications - ArchWiki]]
+
+*** dunst
+minimal notification server.
+
+- [[http://www.knopwob.org/dunst/][Dunst - A customizable and lightweight notification-daemon]]
+
+#+begin_src yaml :tangle yes
+    - name: Install Dunst
+      pacman: name=dunst
+#+end_src
+
+
 ** NTP設定
 NTPの設定をおこなう。
 
